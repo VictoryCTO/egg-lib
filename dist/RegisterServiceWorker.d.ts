@@ -1,4 +1,5 @@
-export declare const registerServiceWorker: ({ source, update }: {
+export declare const registerServiceWorker: ({ message, source, update }: {
+    message: (event: any) => any;
     source: string;
-    update: () => any;
+    update: (event: any) => any;
 }) => void;
