@@ -3,8 +3,8 @@ export const registerServiceWorker = ({
     message,
     source
 }: {
-    installed: (event) => any;
-    message: (event) => any;
+    installed?: (event) => any;
+    message?: (event) => any;
     source: string;
 }) => {
     import("workbox-window").then(({ Workbox }) => {
