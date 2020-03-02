@@ -1,1 +1,1 @@
-export { registerServiceWorker } from "./RegisterServiceWorker";
+export { registerServiceWorker } from "./ServiceWorker";
