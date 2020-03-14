@@ -20,7 +20,7 @@ export const registerServiceWorker = ({
     });
 };
 
-const showUpdateSnackbar = async () => {
+export const showUpdateSnackbar = async () => {
     await import("@material/mwc-snackbar");
     await import("@material/mwc-button");
 
