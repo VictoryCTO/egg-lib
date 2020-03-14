@@ -1,1 +1,1 @@
-export { registerServiceWorker } from "./ServiceWorker";
+export { showUpdateSnackbar, registerServiceWorker } from "./ServiceWorker";

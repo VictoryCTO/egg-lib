@@ -3,3 +3,4 @@ export declare const registerServiceWorker: ({ installed, message, source }: {
     message?: (event: any) => any;
     source: string;
 }) => void;
+export declare const showUpdateSnackbar: () => Promise<void>;
