@@ -1,11 +1,13 @@
 import { html } from "lit-element";
 import { render } from "lit-html";
-export const registerServiceWorker = ({ installed, message, source }) => {
+export const registerServiceWorker = ({ installed, message, source, }) => {
     import("workbox-window").then(({ Workbox }) => {
         if ("serviceWorker" in navigator) {
             const workbox = new Workbox(source);
-            workbox.addEventListener("installed", installed);
-            workbox.addEventListener("message", message);
+            if (installed)
+                workbox.addEventListener("installed", installed);
+            if (message)
+                workbox.addEventListener("message", message);
             workbox.register();
         }
     });

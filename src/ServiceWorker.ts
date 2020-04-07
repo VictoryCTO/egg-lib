@@ -4,7 +4,7 @@ import { render } from "lit-html";
 export const registerServiceWorker = ({
     installed,
     message,
-    source
+    source,
 }: {
     installed?: (event) => any;
     message?: (event) => any;
@@ -13,8 +13,8 @@ export const registerServiceWorker = ({
     import("workbox-window").then(({ Workbox }) => {
         if ("serviceWorker" in navigator) {
             const workbox = new Workbox(source);
-            workbox.addEventListener("installed", installed);
-            workbox.addEventListener("message", message);
+            if (installed) workbox.addEventListener("installed", installed);
+            if (message) workbox.addEventListener("message", message);
             workbox.register();
         }
     });
