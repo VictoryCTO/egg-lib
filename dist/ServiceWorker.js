@@ -17,7 +17,7 @@ export const showUpdateSnackbar = async () => {
     await import("@material/mwc-button");
     const snackbar = html `
         <mwc-snackbar labelText="Application has been updated">
-            <mwc-button slot="action" @click=${window.location.reload}
+            <mwc-button slot="action" @click=${reload}
                 >Reload</mwc-button
             >
         </mwc-snackbar>
@@ -26,4 +26,8 @@ export const showUpdateSnackbar = async () => {
     document.body.appendChild(el);
     render(snackbar, el);
     el.querySelector("mwc-snackbar").open();
+};
+const reload = () => {
+    window.location.reload();
+    return false;
 };
